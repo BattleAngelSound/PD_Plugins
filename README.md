@@ -13,5 +13,8 @@ https://github.com/LibPdIntegration/LibPdIntegration
 To use plugins download LibPd and follow instructions:
 https://github.com/LibPdIntegration/LibPdIntegration
 
+Plugins have exposed selected parameters with naming that should be self-explanatory to non-audio developers.
+
+
 Demo: https://youtu.be/jKQxfp7zrJA 
 
