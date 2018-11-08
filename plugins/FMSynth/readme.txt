@@ -1,0 +1,1 @@
+FM SYnth is made to produce creazy alien sounds. Draw your own waveform in 'array1'
