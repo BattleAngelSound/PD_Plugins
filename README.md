@@ -13,3 +13,5 @@ https://github.com/LibPdIntegration/LibPdIntegration
 To use plugins download LibPd and follow instructions:
 https://github.com/LibPdIntegration/LibPdIntegration
 
+Demo: https://youtu.be/jKQxfp7zrJA 
+
