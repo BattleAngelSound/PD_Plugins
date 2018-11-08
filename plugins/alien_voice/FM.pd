@@ -1,0 +1,291 @@
+#N canvas 1399 60 409 304 10;
+#X obj 225 176 +~;
+#X obj 239 152 *~;
+#X obj 238 10 inlet;
+#X obj 225 217 outlet~;
+#N canvas 51 239 417 670 carrier 0;
+#X floatatom 34 255 5 0 0 0 - - -;
+#X text 27 15 carrier;
+#X msg 96 117 0;
+#X obj 34 91 t b b;
+#X obj 34 64 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 34 201 \$1 10;
+#X obj 34 144 line;
+#X obj 34 228 line;
+#X msg 34 117 99 3000;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array carrier 100 float 3;
+#A 0 744.29 694.29 694.29 687.147 687.147 687.147 680.004 680.004 680.004
+680.004 672.861 665.718 665.718 665.718 662.146 658.575 658.575 655.003
+651.432 644.289 630.003 615.717 601.432 587.146 565.717 540.717 522.859
+508.573 494.288 487.145 480.002 472.859 458.573 458.573 447.859 437.144
+430.001 430.001 430.001 426.43 422.858 415.715 408.573 401.43 397.858
+394.287 394.287 394.287 387.144 372.858 372.858 372.858 372.858 372.858
+372.858 372.858 372.858 372.858 372.858 372.858 372.858 372.858 372.858
+372.858 372.858 372.858 372.858 372.858 372.858 372.858 372.858 372.858
+372.858 372.858 372.858 371.072 369.286 367.501 365.715 365.715 365.715
+365.715 365.715 365.715 364.286 362.858 361.429 360.001 358.572 358.572
+358.572 358.572 358.572 358.572 355.001 351.429 351.429 351.429 351.429
+0;
+#X coords 0 1000 100 0 200 140 1 0 0;
+#X restore -236 117 graph;
+#X obj -242 37 savepanel;
+#X msg -242 58 \; carrier write \$1;
+#X obj -242 16 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 34 36 inlet;
+#X obj -125 620 tabwrite carrier;
+#X obj -32 338 moses 2;
+#X obj 7 361 moses 4;
+#X obj -32 439 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 7 439 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 47 440 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj -32 312 random 10;
+#X obj 85 412 moses 10;
+#X obj 47 387 moses 7;
+#X obj 85 440 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg -220 486 \; carrier read carrier1.txt;
+#X obj 34 279 outlet;
+#X msg -179 530 \; carrier read carrier2.txt;
+#X msg -56 486 \; carrier read carrier3.txt;
+#X msg -12 530 \; carrier read carrier4.txt;
+#X obj 34 173 tabread carrier;
+#X connect 0 0 25 0;
+#X connect 2 0 6 0;
+#X connect 3 0 8 0;
+#X connect 3 1 2 0;
+#X connect 4 0 3 0;
+#X connect 5 0 7 0;
+#X connect 6 0 29 0;
+#X connect 7 0 0 0;
+#X connect 8 0 6 0;
+#X connect 10 0 11 0;
+#X connect 12 0 10 0;
+#X connect 13 0 4 0;
+#X connect 13 0 20 0;
+#X connect 15 0 17 0;
+#X connect 15 1 16 0;
+#X connect 16 0 18 0;
+#X connect 16 1 22 0;
+#X connect 17 0 24 0;
+#X connect 18 0 26 0;
+#X connect 19 0 27 0;
+#X connect 20 0 15 0;
+#X connect 21 0 23 0;
+#X connect 22 0 19 0;
+#X connect 22 1 21 0;
+#X connect 23 0 28 0;
+#X connect 24 0 14 0;
+#X connect 26 0 14 0;
+#X connect 27 0 14 0;
+#X connect 28 0 14 0;
+#X connect 29 0 5 0;
+#X restore 155 80 pd carrier;
+#N canvas 247 212 445 705 modulator 0;
+#X obj 45 252 osc~;
+#X floatatom 122 260 5 0 0 0 - - -;
+#X text 30 20 modulator;
+#X msg 107 113 0;
+#X obj 45 87 t b b;
+#X obj 45 69 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 45 197 \$1 10;
+#X obj 45 140 line;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array modulator 100 float 3;
+#A 0 6.82068 9.67785 11.1064 11.8207 11.8207 12.535 13.2493 14.6779
+15.3922 15.3922 15.3922 16.1065 16.1065 13.2493 12.535 13.2493 12.535
+12.535 11.8207 11.8207 11.8207 11.8207 11.1064 11.1064 11.1064 12.535
+13.2493 14.6779 14.6779 14.6779 14.6779 14.6779 15.3922 16.1065 16.8208
+16.8208 16.8208 16.8208 16.8208 16.8208 16.8208 16.8208 16.8208 16.8208
+16.1065 15.3922 14.6779 13.2493 13.2493 13.9636 13.9636 13.9636 13.9636
+13.9636 13.9636 13.9636 13.9636 13.9636 13.9636 13.9636 13.9636 13.9636
+13.2493 13.2493 13.2493 13.2493 13.2493 13.2493 13.2493 14.6779 15.3922
+15.3922 16.1065 17.5351 18.2494 19.3208 20.3922 21.8208 22.8923 23.9637
+24.3208 24.678 25.0351 25.3923 25.3923 25.3923 25.3923 25.3923 24.678
+23.9637 23.9637 23.9637 23.9637 23.2494 22.5351 21.8208 21.1065 20.3922
+20.3922 19.6779;
+#X coords 0 100 100 0 200 140 1 0 0;
+#X restore -194 162 graph;
+#X obj 45 224 line;
+#X obj 45 169 tabread modulator;
+#X msg 45 112 99 3000;
+#X obj 45 43 inlet;
+#X obj 45 340 outlet~;
+#X obj 8 504 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 47 504 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 87 505 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 8 377 random 10;
+#X obj 125 477 moses 10;
+#X obj 125 505 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -19 670 tabwrite modulator;
+#X obj -189 62 savepanel;
+#X obj -189 41 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg -189 83 \; modulator write \$1;
+#X msg -194 548 \; modulator read modulator1.txt;
+#X msg -5 549 \; modulator read modulator3.txt;
+#X msg -150 586 \; modulator read modulator2.txt;
+#X msg 44 586 \; modulator read modulator4.txt;
+#X obj 8 403 moses 4;
+#X obj 47 426 moses 6;
+#X obj 87 452 moses 9;
+#X connect 0 0 13 0;
+#X connect 3 0 7 0;
+#X connect 4 0 11 0;
+#X connect 4 1 3 0;
+#X connect 5 0 4 0;
+#X connect 6 0 9 0;
+#X connect 7 0 10 0;
+#X connect 9 0 1 0;
+#X connect 9 0 0 0;
+#X connect 10 0 6 0;
+#X connect 11 0 7 0;
+#X connect 12 0 5 0;
+#X connect 12 0 17 0;
+#X connect 14 0 24 0;
+#X connect 15 0 26 0;
+#X connect 16 0 25 0;
+#X connect 17 0 28 0;
+#X connect 18 0 19 0;
+#X connect 19 0 27 0;
+#X connect 21 0 23 0;
+#X connect 22 0 21 0;
+#X connect 24 0 20 0;
+#X connect 25 0 20 0;
+#X connect 26 0 20 0;
+#X connect 27 0 20 0;
+#X connect 28 0 14 0;
+#X connect 28 1 29 0;
+#X connect 29 0 15 0;
+#X connect 29 1 30 0;
+#X connect 30 0 16 0;
+#X connect 30 1 18 0;
+#X restore 238 80 pd modulator;
+#N canvas 249 182 410 664 index 0;
+#X floatatom 34 277 5 0 0 0 - - -;
+#X text 30 29 index;
+#X msg 115 125 0;
+#X obj 34 99 t b b;
+#X obj 34 76 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 34 209 \$1 10;
+#X obj 34 152 line;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array index 100 float 3;
+#A 0 5.71432 5.71432 5.71432 5.71432 5.71432 5.71432 5.71432 5.71432
+5.71432 6.07146 6.4286 6.78574 7.14288 7.50002 7.85716 8.2143 8.57144
+9.28572 10 10.7143 11.4286 11.7857 12.1428 12.5 12.8571 13.0952 13.3333
+13.5714 15 15.7142 16.0714 16.4285 16.4285 17.8571 18.5714 18.5714
+19.2856 19.2856 19.2856 19.9999 20.357 20.7142 21.4285 21.7856 22.1427
+22.4999 22.857 24.2856 24.2856 25.7141 25.7141 26.4284 27.1427 27.857
+28.5713 29.2855 29.2855 30.7141 30.7141 31.4284 32.1427 32.8569 33.5712
+33.5712 34.2855 34.6426 34.9998 36.4283 37.1426 37.8569 38.5712 38.5712
+39.2854 39.9997 40.714 41.4283 41.4283 42.8568 43.5711 44.2854 44.2854
+45.714 46.4282 47.8568 48.5711 49.2854 49.9996 50.7139 50.7139 52.8568
+52.8568 53.571 54.2853 54.9996 55.7139 55.7139 55.7139 56.4281 56.4281
+56.4281;
+#X coords 0 100 100 0 200 140 1 0 0;
+#X restore -192 119 graph;
+#X obj 34 236 line;
+#X obj 34 181 tabread index;
+#X msg 34 125 99 3000;
+#X obj 34 50 inlet;
+#X obj 34 301 outlet;
+#X obj -191 49 savepanel;
+#X obj -191 28 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg -191 70 \; index write \$1;
+#X obj -59 595 tabwrite carrier;
+#X obj -3 449 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 36 449 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 76 450 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj -3 322 random 10;
+#X obj 114 422 moses 10;
+#X obj 114 450 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg -180 489 \; index read index1.txt;
+#X msg -39 486 \; index read index3.txt;
+#X msg -148 524 \; index read index2.txt;
+#X msg 0 528 \; index read index4.txt;
+#X obj -3 348 moses 1;
+#X obj 36 371 moses 3;
+#X obj 76 397 moses 8;
+#X obj 136 190 vsl 8 64 0 1000 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X floatatom 147 257 5 0 0 0 - - -;
+#X obj 34 257 -;
+#X obj 66 70 receive aliendistance;
+#X floatatom 111 302 5 0 0 0 - - -;
+#X obj 111 275 - 50;
+#X connect 0 0 12 0;
+#X connect 2 0 6 0;
+#X connect 3 0 10 0;
+#X connect 3 1 2 0;
+#X connect 4 0 3 0;
+#X connect 5 0 8 0;
+#X connect 6 0 9 0;
+#X connect 8 0 32 0;
+#X connect 9 0 5 0;
+#X connect 10 0 6 0;
+#X connect 11 0 4 0;
+#X connect 11 0 20 0;
+#X connect 13 0 15 0;
+#X connect 14 0 13 0;
+#X connect 17 0 23 0;
+#X connect 18 0 25 0;
+#X connect 19 0 24 0;
+#X connect 20 0 27 0;
+#X connect 21 0 22 0;
+#X connect 22 0 26 0;
+#X connect 23 0 16 0;
+#X connect 24 0 16 0;
+#X connect 25 0 16 0;
+#X connect 26 0 16 0;
+#X connect 27 0 17 0;
+#X connect 27 1 28 0;
+#X connect 28 0 18 0;
+#X connect 28 1 29 0;
+#X connect 29 0 19 0;
+#X connect 29 1 21 0;
+#X connect 30 0 31 0;
+#X connect 30 0 35 0;
+#X connect 32 0 0 0;
+#X connect 33 0 30 0;
+#X connect 34 0 32 1;
+#X connect 35 0 34 0;
+#X restore 329 80 pd index;
+#X obj 155 160 -~;
+#X obj 22 115 receive aliendistance;
+#X floatatom 100 170 5 0 0 0 - - -;
+#X obj 100 143 - 50;
+#X obj 22 144 * -1;
+#X obj 22 171 / 100;
+#X obj 22 196 s transpose;
+#X connect 0 0 3 0;
+#X connect 1 0 0 1;
+#X connect 2 0 4 0;
+#X connect 2 0 5 0;
+#X connect 2 0 6 0;
+#X connect 4 0 7 0;
+#X connect 5 0 1 0;
+#X connect 6 0 1 1;
+#X connect 7 0 0 0;
+#X connect 8 0 11 0;
+#X connect 8 0 10 0;
+#X connect 10 0 9 0;
+#X connect 10 0 7 1;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;

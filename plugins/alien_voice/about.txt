@@ -1,0 +1,3 @@
+Alien Voice simulator
+
+Plugin name: Vocalisations.pd
